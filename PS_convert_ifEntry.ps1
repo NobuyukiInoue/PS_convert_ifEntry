@@ -12,9 +12,11 @@ if (-Not($IFS)) {
   # $IFS = "`t"
   # $IFS = ";"
 }
-$IFS = $IFS.Replace("\t", "`t")
-$IFS = $IFS.Replace("\r", "`r")
-$IFS = $IFS.Replace("\n", "`n")
+else {
+    $IFS = $IFS.Replace("\t", "`t")
+    $IFS = $IFS.Replace("\r", "`r")
+    $IFS = $IFS.Replace("\n", "`n")
+}
 
 class ifValues {
     [string] $OID
