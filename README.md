@@ -1,7 +1,7 @@
 # PS_convert_ifEntry
 
 It is a script that outputs ifEntry(.1.3.6.1.2.1.2.2.1)<br>
-after converting it to a table TAB split format On PowerShell.
+after converting it to a table format On PowerShell.
 
 ## Requirement
 
@@ -26,6 +26,19 @@ PS D:\PS_convert_ifEntry> Get-Content .\sample\sample.txt
 .1.3.6.1.2.1.2.2.1.1.6 = INTEGER: 6
 .1.3.6.1.2.1.2.2.1.1.7 = INTEGER: 7
 .1.3.6.1.2.1.2.2.1.1.8 = INTEGER: 8
+  ...
+  ...
+.1.3.6.1.2.1.2.2.1.2.1 = STRING: GigabitEthernet0/0
+.1.3.6.1.2.1.2.2.1.2.2 = STRING: Null0
+.1.3.6.1.2.1.2.2.1.2.3 = STRING: unrouted VLAN 1
+.1.3.6.1.2.1.2.2.1.2.4 = STRING: unrouted VLAN 1002
+.1.3.6.1.2.1.2.2.1.2.5 = STRING: unrouted VLAN 1004
+.1.3.6.1.2.1.2.2.1.2.6 = STRING: unrouted VLAN 1005
+.1.3.6.1.2.1.2.2.1.2.7 = STRING: unrouted VLAN 1003
+.1.3.6.1.2.1.2.2.1.2.8 = STRING: GigabitEthernet1/0/1
+.1.3.6.1.2.1.2.2.1.2.9 = STRING: GigabitEthernet1/0/2
+.1.3.6.1.2.1.2.2.1.2.10 = STRING: GigabitEthernet1/0/3
+.1.3.6.1.2.1.2.2.1.2.11 = STRING: GigabitEthernet1/0/4
   ...
   ...
 PS D:\PS_convert_ifEntry> Get-Content .\sample\sample1.txt | .\PS_convert_ifEntry.ps1
