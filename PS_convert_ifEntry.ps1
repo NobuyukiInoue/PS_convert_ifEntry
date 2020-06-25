@@ -193,61 +193,35 @@ $ifIndex.table = $ifIndex.table.GetEnumerator() | sort -Property key
 
 if ($IFS -eq "") {
     $format = "{0,-10}{1,-30}{2,-7}{3,-12}{4,-14}{5,-14}{6,-32}{7,-14}{8,-14}"
-    Write-Output ($format -f `
-        "ifIndex" `
-      , "ifDesc" `
-      , "ifMtu" `
-      , "ifSpeed" `
-      , "ifAdminStatus" `
-      , "ifOperStatus" `
-      , "ifLastChange" `
-      , "ifInOctets" `
-      , "ifOutOctets" `
-    )
-
-    #foreach ($index in $ifIndex.table.Keys) {
-    foreach ($index in $ifIndex.table) {
-        Write-Output ($format -f `
-        # $ifIndex.table[$index.Key] `
-          $index.Key `
-        , $ifDescr.table[$index.Key] `
-        , $ifMtu.table[$index.Key] `
-        , $ifSpeed.table[$index.Key] `
-        , $ifAdminStatus.table[$index.Key] `
-        , $ifOperStatus.table[$index.Key] `
-        , $ifLastChange.table[$index.Key] `
-        , $ifInOctets.table[$index.Key] `
-        , $ifOutOctets.table[$index.Key] `
-        )
-    }
 }
 else {
     $format = "{0}$IFS{1}$IFS{2}$IFS{3}$IFS{4}$IFS{5}$IFS{6}$IFS{7}$IFS{8}"
-    Write-Output ($format -f `
-        "ifIndex" `
-      , "ifDesc" `
-      , "ifMtu" `
-      , "ifSpeed" `
-      , "ifAdminStatus" `
-      , "ifOperStatus" `
-      , "ifLastChange" `
-      , "ifInOctets" `
-      , "ifOutOctets" `
-    )
+}
 
-    #foreach ($index in $ifIndex.table.Keys) {
-    foreach ($index in $ifIndex.table) {
-        Write-Output ($format -f `
-        # $ifIndex.table[$index.Key] `
-          $index.Key `
-        , $ifDescr.table[$index.Key] `
-        , $ifMtu.table[$index.Key] `
-        , $ifSpeed.table[$index.Key] `
-        , $ifAdminStatus.table[$index.Key] `
-        , $ifOperStatus.table[$index.Key] `
-        , $ifLastChange.table[$index.Key] `
-        , $ifInOctets.table[$index.Key] `
-        , $ifOutOctets.table[$index.Key] `
-        )
-    }
+Write-Output ($format -f `
+    "ifIndex" `
+  , "ifDesc" `
+  , "ifMtu" `
+  , "ifSpeed" `
+  , "ifAdminStatus" `
+  , "ifOperStatus" `
+  , "ifLastChange" `
+  , "ifInOctets" `
+  , "ifOutOctets" `
+)
+
+#foreach ($index in $ifIndex.table.Keys) {
+foreach ($index in $ifIndex.table) {
+    Write-Output ($format -f `
+    # $ifIndex.table[$index.Key] `
+      $index.Key `
+    , $ifDescr.table[$index.Key] `
+    , $ifMtu.table[$index.Key] `
+    , $ifSpeed.table[$index.Key] `
+    , $ifAdminStatus.table[$index.Key] `
+    , $ifOperStatus.table[$index.Key] `
+    , $ifLastChange.table[$index.Key] `
+    , $ifInOctets.table[$index.Key] `
+    , $ifOutOctets.table[$index.Key] `
+    )
 }
